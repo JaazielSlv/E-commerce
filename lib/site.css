@@ -1,0 +1,12 @@
+.balao{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(4, 162, 253);
+    border-radius: 50%;
+    margin-top: -20px;
+}
+.banner{
+    width: 100%;
+    height: 450px;
+    background-image: url('../lib/img/banner.jpg');
+}
