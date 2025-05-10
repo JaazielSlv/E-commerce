@@ -1,6 +1,6 @@
-<?php require_once "../../shared/header.php"; ?>
-<link rel="stylesheet" href="../../../lib/aurora.css">
-<link rel="stylesheet" href="../../../lib/site.css">
+<?php require_once "public/shared/header.php"; ?>
+<!-- <link rel="stylesheet" href="../../../lib/aurora.css">
+<link rel="stylesheet" href="../../../lib/site.css"> -->
 <section class="car">
     <div class="container">
         <div class="box-6 mg-t-6">
@@ -19,11 +19,11 @@
                     </thead>
                     <tbody>
                         <tr class="zebra">
-                            <td class="fonte12 pd-5 txt-c">1</td>
-                            <td class="fonte12 pd-5 txt-c">Notebook</td>
-                            <td class="fonte12 pd-5 txt-c">2</td>
-                            <td class="fonte12 pd-5 txt-c">00.00</td>
-                            <td class="fonte12 pd-5 txt-c"><img src="../../../lib/img/notebook.png" alt="" class="logo-40 mg-auto"></td>
+                            <td class="fonte12 pd-5 txt-c"><?= $_SESSION['carrinho']['id'];?></td>
+                            <td class="fonte12 pd-5 txt-c"><?= $_SESSION['carrinho']['descricao'];?></td>
+                            <td class="fonte12 pd-5 txt-c"><?= $_SESSION['carrinho']['qtde'];?></td>
+                            <td class="fonte12 pd-5 txt-c"><?= "R$".number_format($_SESSION['carrinho']['preco'], 2 ,",",".");?></td>
+                            <td class="fonte12 pd-5 txt-c"><img src="lib/img/<?= $_SESSION['carrinho']['imagem'];?>" alt="" class="logo-40 mg-auto"></td>
                             <td class="fonte12 pd-5 txt-c">000.00</td>
                             <td class="fonte12 pd-5 txt-c">
                                 <a href="" class="txt-c flex justify-center item-centro">
@@ -51,7 +51,7 @@
                         </tr>
                         <tr>
                             <td colspan="7">
-                                <a href="" class="btn-100 bg-p1-azul mg-b-1 fnc-branco fonte14 fw-800">Comprar mais</a>
+                                <a href="index.php?arquivo=controlador&metodo=index" class="btn-100 bg-p1-azul mg-b-1 fnc-branco fonte14 fw-800">Comprar mais</a>
                                 <input type="submit" value="Finalizar" class=" btn-100 btn-borda-vermelho ">
                             </td>
                         </tr>
@@ -62,4 +62,4 @@
     </div>
 </section>
 
-<?php require_once "../../shared/footer.php"; ?>
+<?php require_once "public/shared/footer.php"; ?>
