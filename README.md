@@ -1,7 +1,7 @@
 # Plataforma E-commerce ZIEL-TECH
 
 ## 🌟 Visão Geral
-ZIEL-TECH é um protótipo de plataforma de e-commerce baseada na web, projetada para demonstrar uma loja online funcional. Ela permite que os usuários naveguem por produtos, adicionem-nos a um carrinho de compras e simulem um processo de checkout com diferentes métodos de pagamento. O principal propósito deste código é servir como um exemplo prático dos princípios da Programação Orientada a Objetos (POO) aplicados a um cenário do mundo real. Este projeto também serviu como um trabalho prático para um curso de PHP, permitindo aplicar os conhecimentos adquiridos em um contexto de desenvolvimento web real. **Este projeto é 100% focado em Programação Orientada a Objetos (POO)**, refletindo uma filosofia de design central ("Projeto-POO-Tech") evidente em toda a sua estrutura.
+ZIEL-TECH é um projeto de uma  plataforma de e-commerce baseada na web, projetada para demonstrar uma loja online funcional. Ela permite que os usuários naveguem por produtos, adicionem-nos a um carrinho de compras e simulem um processo de checkout com diferentes métodos de pagamento. O principal propósito deste código é servir como um exemplo prático dos princípios da Programação Orientada a Objetos (POO) aplicados a um cenário do mundo real. Este projeto também serviu como um trabalho prático para um curso de PHP, permitindo aplicar os conhecimentos adquiridos em um contexto de desenvolvimento web real. **Este projeto é 100% focado em Programação Orientada a Objetos (POO)**, refletindo uma filosofia de design central ("Projeto-POO-Tech") evidente em toda a sua estrutura.
 
 ---
 
