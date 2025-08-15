@@ -12,8 +12,8 @@ if($_GET):
 
 else:
     require_once "classes/controlador.php";
-    $obg = new controlador();
-    $obg->index();
+    $obj = new Controlador();
+    $obj->index();
     
 
 

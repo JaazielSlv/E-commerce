@@ -47,7 +47,7 @@ require_once "public/shared/header.php";
                 <p class="fonte16 poppins-black txt-c"><?= $valor->getpreco();?></p>
             </div>
 
-            <a href="index.php?arquivo=controlador&metodo=inserircarrinho&id=<?= $valor->getid();?>" class="btn-100 bg-p7-electric mg-t-1 fnc-branco font14 bg-p1-verde-hover">Adicionar ao carrinho</a>
+            <button onclick="adicionarAoCarrinho(<?= $valor->getid();?>)" class="btn-100 bg-p7-electric mg-t-1 fnc-branco font14 bg-p1-verde-hover adicionar-carrinho-btn">Adicionar ao carrinho</button>
         </div>
 
         <?php endforeach; 
@@ -55,4 +55,124 @@ require_once "public/shared/header.php";
 
     </div>
 </section>
+
+<script>
+function adicionarAoCarrinho(produtoId) {
+    // Encontra o botão que foi clicado
+    const botao = event.target;
+    const textoOriginal = botao.innerHTML;
+    
+    // Desabilita o botão e mostra loading
+    botao.disabled = true;
+    botao.innerHTML = 'Adicionando...';
+    botao.style.opacity = '0.6';
+    
+    // Faz a requisição AJAX
+    fetch('index.php?arquivo=controlador&metodo=adicionarCarrinhoAjax', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'id=' + produtoId
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Sucesso - atualiza o contador do carrinho
+            atualizarContadorCarrinho();
+            
+            // Feedback visual de sucesso
+            botao.innerHTML = '✓ Adicionado!';
+            botao.style.backgroundColor = '#28a745';
+            
+            // Mostra mensagem de sucesso
+            mostrarMensagem(data.message, 'success');
+            
+            // Restaura o botão após 2 segundos
+            setTimeout(() => {
+                botao.disabled = false;
+                botao.innerHTML = textoOriginal;
+                botao.style.opacity = '1';
+                botao.style.backgroundColor = '';
+            }, 2000);
+            
+        } else {
+            // Erro - mostra mensagem
+            mostrarMensagem(data.message, 'error');
+            
+            // Restaura o botão
+            botao.disabled = false;
+            botao.innerHTML = textoOriginal;
+            botao.style.opacity = '1';
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        mostrarMensagem('Erro ao adicionar produto ao carrinho', 'error');
+        
+        // Restaura o botão
+        botao.disabled = false;
+        botao.innerHTML = textoOriginal;
+        botao.style.opacity = '1';
+    });
+}
+
+function mostrarMensagem(mensagem, tipo) {
+    // Remove mensagem anterior se existir
+    const mensagemAnterior = document.querySelector('.mensagem-feedback');
+    if (mensagemAnterior) {
+        mensagemAnterior.remove();
+    }
+    
+    // Cria a div da mensagem
+    const div = document.createElement('div');
+    div.className = 'mensagem-feedback';
+    div.innerHTML = mensagem;
+    
+    // Estilo da mensagem
+    div.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    `;
+    
+    // Cor baseada no tipo
+    if (tipo === 'success') {
+        div.style.backgroundColor = '#28a745';
+    } else {
+        div.style.backgroundColor = '#dc3545';
+    }
+    
+    // Adiciona ao body
+    document.body.appendChild(div);
+    
+    // Anima a entrada
+    setTimeout(() => {
+        div.style.opacity = '1';
+        div.style.transform = 'translateX(0)';
+    }, 10);
+    
+    // Remove após 4 segundos
+    setTimeout(() => {
+        div.style.opacity = '0';
+        div.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (div.parentNode) {
+                div.parentNode.removeChild(div);
+            }
+        }, 300);
+    }, 4000);
+}
+</script>
+
 <?php require_once "public/shared/footer.php"; ?>

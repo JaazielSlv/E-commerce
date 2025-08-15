@@ -1,31 +1,25 @@
 <?php 
 
-class venda{
-
+class Venda
+{
     private float $valor;
-    private clientes $cliente;
-    private datetime $data_venda;
-    
-    public function __construct(float $valor, clientes $cliente)
-    {
+    private Clientes $cliente;
+    private DateTime $dataVenda;
+
+    public function __construct(float $valor, Clientes $cliente){
         $this->valor = $valor;
         $this->cliente = $cliente;
-        $this->data_venda = new DateTime();
+        $this->dataVenda = new DateTime();
     }
 
-    function getvalor(){
+    public function getValor(){
         return $this->valor;
     }
-
-    function getcliente(){
+    public function getCliente(){
         return $this->cliente;
     }
-
-    function getdata_venda(){
-        return $this->data_venda;
+    public function getDataVenda(){
+        return $this->dataVenda;
     }
-
-
-
 
 }

@@ -1,9 +1,10 @@
 <?php 
-
-class cartao_credito extends notificacao implements pagamento_interface
+require_once 'notificacao.php';
+require_once 'pagamento_interface.php';
+class CartaoCredito extends Notification implements pagamento_interface
 {
-    public function pagar($valor)
-    {
-        echo"pagou no cartao o valor de; ". $valor;
-    }
+    public function pagar($valor){
+         $msg =  "Pagamento no valor de R$ ".number_format($valor,2 ,',','.')." realizado via Cartão de Crédito";
+         echo $msg;
+     }
 }

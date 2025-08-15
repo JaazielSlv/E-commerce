@@ -1,0 +1,442 @@
+.balao{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2a74ff;
+    margin-top: -20px;
+    transition: transform 0.2s ease;
+}
+.banner{
+    width: 100%;
+    height: 450px;
+    background-image: url('img/banner.jpg');
+    background-size: cover;
+}
+footer{
+ background-color: #9dbcff;
+
+ width: 100%;
+ height: 60px;
+}
+.car-table{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.img-prod{
+    transition: all .40s ease-in-out;
+}
+.img-prod:hover{
+    transform: scale(1.1);
+}
+.qtde{
+    width: 40px;
+    padding-left: 15px;
+}
+.edicao{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 60vh;
+    padding: 20px 0;
+}
+
+/* Estilos para centralização do carrinho */
+.carrinho-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.carrinho-wrapper {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-row label {
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-row select {
+    padding: 15px !important;
+    border: 2px solid #555555 !important;
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    background-color: white !important;
+    transition: border-color 0.3s ease !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+/* Força a exibição do texto selecionado em todos os browsers */
+.form-row select {
+    text-align-last: center;
+}
+
+.form-row select:focus,
+.form-row select:active {
+    color: #000000 !important;
+}
+
+/* Para Internet Explorer */
+.form-row select::-ms-value {
+    color: #000000 !important;
+    background: transparent;
+}
+
+/* Para Firefox */
+.form-row select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000000;
+}
+
+/* Garante que options tenham texto visível */
+.form-row select option:not(:checked) {
+    color: #000000 !important;
+}
+
+.form-row select option {
+    color: #000000 !important;
+    font-weight: normal;
+    background-color: white !important;
+    padding: 10px;
+}
+
+.form-row select option:checked,
+.form-row select option:selected {
+    color: #000000 !important;
+    background-color: #e3f2fd !important;
+    font-weight: bold;
+}
+
+.form-row select:focus {
+    outline: none;
+    border-color: #0c7df7;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Força a cor preta no texto dos selects */
+.form-row select:valid {
+    color: #000000 !important;
+}
+
+.form-row select:invalid {
+    color: #666666 !important;
+}
+
+/* Específico para WebKit browsers */
+.form-row select::-webkit-input-placeholder {
+    color: #666666 !important;
+}
+
+.form-row select:-moz-placeholder {
+    color: #666666 !important;
+}
+
+.form-row select::-moz-placeholder {
+    color: #666666 !important;
+}
+
+.form-row select:-ms-input-placeholder {
+    color: #666666 !important;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+/* Estilo personalizado para o botão "Comprar mais" */
+.btn-comprar-mais {
+    background-color: #28a745 !important;
+    border: 2px solid #28a745 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex: 1 !important;
+    font-size: 16px !important;
+    height: 50px !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+.btn-comprar-mais:hover {
+    background-color: #218838 !important;
+    border-color: #218838 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3) !important;
+}
+
+.btn-finalizar {
+    background-color: #dc3545 !important;
+    border: 2px solid #dc3545 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    flex: 1 !important;
+    font-size: 16px !important;
+    height: 50px !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+.btn-finalizar:hover {
+    background-color: #c82333 !important;
+    border-color: #c82333 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Centralização adicional para elementos da tabela */
+.car-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.car-table .form-section {
+    padding: 20px;
+}
+
+.car-table .button-group {
+    padding: 20px;
+}
+
+/* Melhoria no espaçamento dos campos de formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* Estilos específicos para garantir que o texto selecionado apareça */
+select {
+    color: #000000 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+}
+
+/* Remove todas as setinhas dos selects */
+select::-ms-expand {
+    display: none;
+}
+
+/* Ajuste do rodapé para ficar no fim da tela */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #9dbcff;
+    width: 100%;
+    height: 60px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+}
+
+/* Regras específicas para sobrescrever aurora.css */
+.button-group .btn-comprar-mais,
+.button-group .btn-finalizar,
+td.button-group .btn-comprar-mais,
+td.button-group .btn-finalizar {
+    height: 50px !important;
+    width: auto !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Força o mesmo tamanho para ambos os botões */
+.button-group > * {
+    flex: 1 !important;
+    height: 50px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sobrescreve especificamente os estilos do aurora.css para selects */
+.form-row select,
+.form-container select {
+    height: auto !important;
+    padding: 15px !important;
+    margin-bottom: 0 !important;
+    border: 2px solid #555555 !important;
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    color: #000000 !important;
+    background-color: white !important;
+    text-align: center !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+/* CSS Hack para forçar exibição do texto selecionado */
+.form-row select option[selected] {
+    color: #000000 !important;
+}
+
+.form-row select:not(:focus):not(:active) {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Remove qualquer transformação de texto que possa estar oculta */
+.form-row select * {
+    color: #000000 !important;
+    text-transform: none !important;
+    text-indent: 0 !important;
+}
+
+/* Força a cor do texto em diferentes estados */
+.form-row select,
+.form-row select:hover,
+.form-row select:focus,
+.form-row select:active,
+.form-row select:visited {
+    color: #000000 !important;
+    background-color: white !important;
+}
+
+/* Estilos para botões de adicionar ao carrinho */
+.adicionar-carrinho-btn {
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.adicionar-carrinho-btn:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.adicionar-carrinho-btn:hover:not(:disabled) {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* Animação para o feedback de sucesso */
+.adicionar-carrinho-btn.sucesso {
+    background-color: #28a745 !important;
+    animation: pulseSuccess 0.6s ease !important;
+}
+
+@keyframes pulseSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para mensagens de feedback */
+.mensagem-feedback {
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+/* Melhoria na responsividade dos botões */
+@media (max-width: 768px) {
+    .adicionar-carrinho-btn {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+    }
+    
+    .mensagem-feedback {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+        font-size: 13px !important;
+    }
+}
